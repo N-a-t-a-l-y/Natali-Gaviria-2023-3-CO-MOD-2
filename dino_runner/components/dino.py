@@ -2,17 +2,17 @@ import pygame
 from pygame.sprite import Sprite
 from dino_runner.utils.constants import RUNNING, JUMPING, DUCKING
 
-																#PINKIPROMISE DE QUE NO COPIÉ A DIDIER, FUÉ COLABORACIÓN Y INDRI LIZBETH TAMPOCO LO COPIÓ
-class Dino:														#PINKIPROMISE DE QUE NO COPIÉ A DIDIER, FUÉ COLABORACIÓN Y INDRI LIZBETH TAMPOCO LO COPIÓ
+																
+class Dino:														
 	X_POS = 80
-	Y_POS = 310													#PINKIPROMISE DE QUE NO COPIÉ A DIDIER, FUÉ COLABORACIÓN Y INDRI LIZBETH TAMPOCO LO COPIÓ
-	Y_POS_DUCK = 340											#PINKIPROMISE DE QUE NO COPIÉ A DIDIER, FUÉ COLABORACIÓN Y INDRI LIZBETH TAMPOCO LO COPIÓ
+	Y_POS = 310													
+	Y_POS_DUCK = 340											
 	JUMP_SPEED = 8.5
-	def __init__(self):											#PINKIPROMISE DE QUE NO COPIÉ A DIDIER, FUÉ COLABORACIÓN Y INDRI LIZBETH TAMPOCO LO COPIÓ
+	def __init__(self):											
 		self.image = RUNNING[0]
-		self.dino_rect = self.image.get_rect()					#PINKIPROMISE DE QUE NO COPIÉ A DIDIER, FUÉ COLABORACIÓN Y INDRI LIZBETH TAMPOCO LO COPIÓ
-		self.dino_rect.x = self.X_POS						#PINKIPROMISE DE QUE NO COPIÉ A DIDIER, FUÉ COLABORACIÓN Y INDRI LIZBETH TAMPOCO LO COPIÓ
-		self.dino_rect.y = self.Y_POS						#PINKIPROMISE DE QUE NO COPIÉ A DIDIER, FUÉ COLABORACIÓN Y INDRI LIZBETH TAMPOCO LO COPIÓ
+		self.dino_rect = self.image.get_rect()					
+		self.dino_rect.x = self.X_POS						
+		self.dino_rect.y = self.Y_POS	
 		self.dino_run = True 
 		self.step_index = 0
 		self.dino_jump = False
