@@ -12,7 +12,7 @@ class ObstacleManager:
         if len(self.obstacles) == 0:
             cactus = Cactus()
             self.obstacles.append(cactus)
-            bird = bird()
+            bird = Bird()
             self.obstacles.append(bird)
             
 
