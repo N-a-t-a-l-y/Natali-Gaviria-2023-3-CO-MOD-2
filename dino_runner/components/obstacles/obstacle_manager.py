@@ -1,4 +1,3 @@
-import pygame
 import random
 from dino_runner.components.cactus import Cactus
 from dino_runner.components.bird import Bird
@@ -33,6 +32,7 @@ class ObstacleManager:
             obstacle = Cactus('LARGE')
         else:
             obstacle = Bird()
+
         return obstacle
 
     def reset_obstacles(self):

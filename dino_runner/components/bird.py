@@ -1,5 +1,5 @@
 import random
-import pygame
+
 from dino_runner.components.obstacles.obstacle import Obstacle
 from dino_runner.utils.constants import BIRD
 
@@ -16,6 +16,6 @@ class Bird(Obstacle):
         if self.index > 10:
             self.index = 0
 
-        screen.blit(BIRD[self.index // 5])(self.rect.x, self.rect.y)
+        screen.blit(BIRD[self.index // 5], (self.rect.x, self.rect.y))
         self.index += 1
     
