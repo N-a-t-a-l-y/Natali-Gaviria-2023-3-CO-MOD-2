@@ -20,8 +20,6 @@ class Counter:
 
     def reset(self):
         self.count = 0
-
-
     
     def set_count(self, value):
         self.count = value

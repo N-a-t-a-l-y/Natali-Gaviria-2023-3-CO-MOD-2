@@ -77,7 +77,7 @@ class Game:
         self.menu.reset_screen_color(self.screen)
         half_screen_width = SCREEN_WIDTH // 2
         half_screen_heigth = SCREEN_HEIGHT // 2
-        self.screen.blit(ICON,(half_screen_width - 50, half_screen_heigth - 140))
+        self.screen.blit(ICON, (half_screen_width - 50, half_screen_heigth - 140))
         self.menu.draw(self.screen)
         self.menu.update(self)
 

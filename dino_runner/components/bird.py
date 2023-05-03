@@ -13,7 +13,7 @@ class Bird(Obstacle):
         self.index = 0
 
     def draw(self, screen):
-        if self.index > 10:
+        if self.index >= 10:
             self.index = 0
 
         screen.blit(BIRD[self.index // 5], (self.rect.x, self.rect.y))

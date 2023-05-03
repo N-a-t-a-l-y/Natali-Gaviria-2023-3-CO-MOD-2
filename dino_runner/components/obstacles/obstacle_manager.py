@@ -1,7 +1,6 @@
 import random
 from dino_runner.components.cactus import Cactus
 from dino_runner.components.bird import Bird
-from dino_runner.utils.constants import SMALL_CACTUS
 
 class ObstacleManager:
     def __init__(self):
