@@ -6,7 +6,6 @@ class Counter:
     def __init__(self):
         self.count = 0
 
-
     def update(self):
         self.count += 1
 
@@ -20,6 +19,7 @@ class Counter:
 
     def reset(self):
         self.count = 0
+        #self.deaths = 0
     
     def set_count(self, value):
         self.count = value
