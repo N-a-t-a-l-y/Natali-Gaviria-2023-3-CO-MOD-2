@@ -1,5 +1,4 @@
-import random
-from typing import Any
+import random   
 import pygame
 from pygame.sprite import Sprite
 from dino_runner.utils.constants import SCREEN_WIDTH
@@ -22,4 +21,3 @@ class Powerup(Sprite):
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
-

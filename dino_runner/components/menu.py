@@ -1,5 +1,5 @@
 import pygame
-from dino_runner.utils.constants import FONT_STYLE, SCREEN_WIDTH, SCREEN_HEIGHT, GAME_OVER
+from dino_runner.utils.constants import FONT_STYLE, SCREEN_WIDTH, SCREEN_HEIGHT
 
 class Menu:
     half_screen_width = SCREEN_WIDTH // 2
@@ -25,7 +25,7 @@ class Menu:
     def hundle_event_on_menu(self, game): #(NO TENIA USER_INPUT)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                game.running = False
+                game.gameruning = False
                 game.playing = False
             elif event.type == pygame.KEYDOWN:
                 game.run()

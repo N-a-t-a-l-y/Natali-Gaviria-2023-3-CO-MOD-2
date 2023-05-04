@@ -1,6 +1,7 @@
 import random
 from dino_runner.components.cactus import Cactus
 from dino_runner.components.bird import Bird
+from dino_runner.utils.constants import SHIELD_TYPE
 
 class ObstacleManager:
     def __init__(self):
@@ -15,14 +16,13 @@ class ObstacleManager:
         
         for obstacle in self.obstacles:
             obstacle.update(game.game_speed, self.obstacles)
-            #pygame.time.delay(100)
             if game.player.dino_rect.colliderect(obstacle.rect):
                 if game.player.type != SHIELD_TYPE:
-                game.playing = False
-                game.death_count.update()
-                break
-            else:
-                self.obstacles.remove(obstacle)
+                    game.playing = False
+                    game.death_count.update()
+                    break
+                else:
+                    self.obstacles.remove(obstacle)
 
     def draw(self, screen):
         for obstacle in self.obstacles:

@@ -26,12 +26,12 @@ class Dino:
         self.dino_duck = False
         self.type = DEFAULT_TYPE
         self.image = RUN_IMAGE[self.type][0]
-        self.has_power_ups = False
+        self.has_power_up = False
         self.power_up_time = 0
 
     def update(self, user_imput):
 
-        if self.step_index > 10:
+        if self.step_index >= 10:
             self.step_index = 0
 
 		# si el dino esta corriendo es True
@@ -76,7 +76,7 @@ class Dino:
 
 
     def duck(self, user_imput):
-        self.image = DUCK_IMAGE[self.type][self.type][self.step_index // 5]
+        self.image = DUCK_IMAGE[self.type][self.step_index // 5]
         self.dino_rect = self.image.get_rect()
         self.dino_rect.x = self.X_POS
         self.dino_rect.y = self.Y_POS_DUCK
