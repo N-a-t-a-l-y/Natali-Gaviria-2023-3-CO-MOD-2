@@ -1,7 +1,7 @@
 import random
 from dino_runner.components.cactus import Cactus
 from dino_runner.components.bird import Bird
-from dino_runner.utils.constants import SHIELD_TYPE
+from dino_runner.utils.constants import SHIELD_TYPE, HAMMER_TYPE
 
 class ObstacleManager:
     def __init__(self):
@@ -22,6 +22,8 @@ class ObstacleManager:
                     game.death_count.update()
                     break
                 else:
+                    self.obstacles.remove(obstacle)
+            if game.hammer.rect.colliderect(obstacle.rect): 
                     self.obstacles.remove(obstacle)
 
     def draw(self, screen):

@@ -29,3 +29,5 @@ class Menu:
                 game.playing = False
             elif event.type == pygame.KEYDOWN:
                 game.run()
+                #if event.key == pygame.K_ESCAPE:
+                    #hammer()

@@ -1,11 +1,11 @@
 import pygame
 from pygame.sprite import Sprite
-from dino_runner.utils.constants import RUNNING, JUMPING, DUCKING, DEFAULT_TYPE, SHIELD_TYPE, RUNNING_SHIELD, JUMPING_SHIELD, DUCKING_SHIELD
+from dino_runner.utils.constants import RUNNING, JUMPING, DUCKING, DEFAULT_TYPE, SHIELD_TYPE, RUNNING_SHIELD, JUMPING_SHIELD, DUCKING_SHIELD, HAMMER_TYPE, RUNNING_HAMMER, DUCKING_HAMMER, JUMPING_HAMMER
+from dino_runner.components.powerups.powerup import Launcher
 
-
-RUN_IMAGE = {DEFAULT_TYPE: RUNNING, SHIELD_TYPE: RUNNING_SHIELD}
-DUCK_IMAGE = {DEFAULT_TYPE: DUCKING, SHIELD_TYPE: DUCKING_SHIELD}
-JUMP_IMAGE = {DEFAULT_TYPE: JUMPING, SHIELD_TYPE: JUMPING_SHIELD}
+RUN_IMAGE = {DEFAULT_TYPE: RUNNING, SHIELD_TYPE: RUNNING_SHIELD, HAMMER_TYPE: RUNNING_HAMMER}
+DUCK_IMAGE = {DEFAULT_TYPE: DUCKING, SHIELD_TYPE: DUCKING_SHIELD, HAMMER_TYPE: DUCKING_HAMMER}
+JUMP_IMAGE = {DEFAULT_TYPE: JUMPING, SHIELD_TYPE: JUMPING_SHIELD, HAMMER_TYPE: JUMPING_HAMMER}
 
 class Dino:	
     X_POS = 80
@@ -29,7 +29,8 @@ class Dino:
         self.has_power_up = False
         self.power_up_time = 0
 
-    def update(self, user_imput):
+
+    def update(self, user_imput, game):
 
         if self.step_index >= 10:
             self.step_index = 0
@@ -43,6 +44,13 @@ class Dino:
 
         if self.dino_duck:
             self.duck(user_imput)
+
+        if user_imput[pygame.K_SPACE] and self.type == HAMMER_TYPE:
+            game.flag_hammer = True
+            game.hammer.rect.x = self.dino_rect.x + 100
+            game.hammer.rect.y = self.dino_rect.y
+            self.type = DEFAULT_TYPE
+
 
         if user_imput[pygame.K_UP] and not self.dino_jump:
             self.dino_jump = True
